@@ -58,5 +58,15 @@ namespace DonaldWCFwebApi.APIs
         {
             return episodes;
         }
+
+        [WebInvoke(UriTemplate = "", Method = "POST")]
+        public DonaldEpisode Post(DonaldEpisode donaldEpisode)
+        {
+            var maxId = episodes.Select(y => y.Id).Max();
+            var newId = maxId + 1;
+            donaldEpisode.Id = newId;
+            episodes.Add(donaldEpisode);
+            return donaldEpisode;
+        }
     }
 }

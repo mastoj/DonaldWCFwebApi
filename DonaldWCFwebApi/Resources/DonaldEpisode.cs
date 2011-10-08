@@ -12,6 +12,6 @@ namespace DonaldWCFwebApi.Resources
         public string Content { get; set; }
         public string ArtWorkUrl { get; set; }
         public string Author { get; set; }
-        public DateTime ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
     }
 }
