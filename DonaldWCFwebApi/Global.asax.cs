@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel.Activation;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using DonaldWCFwebApi.APIs;
+using Microsoft.ApplicationServer.Http.Activation;
 
 namespace DonaldWCFwebApi
 {
@@ -20,6 +23,8 @@ namespace DonaldWCFwebApi
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.Add(new ServiceRoute("api/donald", new HttpServiceHostFactory(), typeof(DonaldApi)));
 
             routes.MapRoute(
                 "Default", // Route name
