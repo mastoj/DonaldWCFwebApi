@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using DonaldWCFwebApi.APIs;
+using Microsoft.ApplicationServer.Http;
 using Microsoft.ApplicationServer.Http.Activation;
 
 namespace DonaldWCFwebApi
@@ -24,8 +25,12 @@ namespace DonaldWCFwebApi
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+#if DEBUG
+            HttpConfiguration configuration = new HttpConfiguration() {EnableTestClient = true};
+            routes.Add(new ServiceRoute("api/donald", new HttpServiceHostFactory() {Configuration = configuration}, typeof(DonaldApi)));
+#else
             routes.Add(new ServiceRoute("api/donald", new HttpServiceHostFactory(), typeof(DonaldApi)));
-
+#endif
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters

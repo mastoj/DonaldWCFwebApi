@@ -13,22 +13,26 @@ namespace DonaldWCFwebApi.APIs
     {
         public static List<DonaldEpisode> episodes = new List<DonaldEpisode>
                                                          {
-                                                             CreateEpisode("Donald goes to heaven",
+                                                             CreateEpisode(1, 
+                                                                            "Donald goes to heaven",
                                                                            "Donald goes to heaven and everyone is happy!", 
                                                                            "images/heaven.jpg",
                                                                            "Walt Disney",
                                                                            DateTime.Now.AddDays(-2).Date),
-                                                             CreateEpisode("Donald goes to hell",
+                                                             CreateEpisode(2,
+                                                                           "Donald goes to hell",
                                                                            "Donald goes to hell and everyone is sad :(", 
                                                                            "images/hell.jpg",
                                                                            "Tomas Jansson",
                                                                            DateTime.Now.AddDays(-1).Date),
-                                                             CreateEpisode("Donald is in the forest",
+                                                             CreateEpisode(3, 
+                                                                           "Donald is in the forest",
                                                                            "Donald smells the trees in the forrest.", 
                                                                            "images/forrest.jpg",
                                                                            "Chuck Norris",
                                                                            DateTime.Now.Date),
-                                                             CreateEpisode("Donald have a sit down with Obama and Osama",
+                                                             CreateEpisode(4,
+                                                                           "Donald have a sit down with Obama and Osama",
                                                                            "Donald fix world peace and everyone is happy.", 
                                                                            "images/peace.jpg",
                                                                            "Clint Eastwood",
@@ -36,10 +40,11 @@ namespace DonaldWCFwebApi.APIs
 
                                                          };
 
-        private static DonaldEpisode CreateEpisode(string title, string content, string artWorkUrl, string author, DateTime releaseDate)
+        private static DonaldEpisode CreateEpisode(int id, string title, string content, string artWorkUrl, string author, DateTime releaseDate)
         {
             return new DonaldEpisode()
                        {
+                           Id = id,
                            Title = title,
                            Content = content,
                            ArtWorkUrl = artWorkUrl,
