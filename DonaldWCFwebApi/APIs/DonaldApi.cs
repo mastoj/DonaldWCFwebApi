@@ -68,5 +68,20 @@ namespace DonaldWCFwebApi.APIs
             episodes.Add(donaldEpisode);
             return donaldEpisode;
         }
+
+        [WebInvoke(UriTemplate = "{id}", Method = "PUT")]
+        public DonaldEpisode Put(DonaldEpisode donaldEpisode, int id)
+        {
+            donaldEpisode.Id = id;
+            episodes.RemoveAll(y => y.Id == id);
+            episodes.Add(donaldEpisode);
+            return donaldEpisode;
+        }
+
+        [WebInvoke(UriTemplate = "{id}", Method = "DELETE")]
+        public void Delete(int id)
+        {
+            episodes.RemoveAll(y => y.Id == id);
+        }
     }
 }
