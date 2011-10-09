@@ -110,10 +110,18 @@
     <Compile Include="Resources\DonaldEpisode.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\images\Forrest.jpg" />
-    <Content Include="Content\images\heaven.jpg" />
-    <Content Include="Content\images\hell.jpg" />
-    <Content Include="Content\images\peace.jpg" />
+    <Content Include="Content\images\Forrest.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\images\heaven.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\images\hell.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\images\peace.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
