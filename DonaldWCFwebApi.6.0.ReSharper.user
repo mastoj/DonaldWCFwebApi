@@ -1,0 +1,144 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles />
+    <RecentEdits />
+  </RecentFiles>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="routes" priority="63" />
+      <Item value="ServiceRoute" priority="29" />
+      <Item value="new" priority="254" />
+      <Item value="HttpServiceHostFactory" priority="28" />
+      <Item value="typeof" priority="31" />
+      <Item value="prop" priority="191" />
+      <Item value="string" priority="188" />
+      <Item value="public" priority="61" />
+      <Item value="static" priority="30" />
+      <Item value="List" priority="30" />
+      <Item value="List&lt;DonaldEpisode&gt;" priority="28" />
+      <Item value="DateTime`0" priority="94" />
+      <Item value="HttpCacheVaryByContentEncodings`0" priority="30" />
+      <Item value="return" priority="95" />
+      <Item value="DonaldEpisode" priority="28" />
+      <Item value="Title" priority="31" />
+      <Item value="title" priority="32" />
+      <Item value="Content" priority="32" />
+      <Item value="content" priority="32" />
+      <Item value="ArtWorkUrl" priority="32" />
+      <Item value="artWorkUrl" priority="32" />
+      <Item value="Author" priority="32" />
+      <Item value="author" priority="32" />
+      <Item value="ReleaseDate" priority="32" />
+      <Item value="releaseDate" priority="32" />
+      <Item value="DonaldEpisode`0" priority="96" />
+      <Item value="int" priority="94" />
+      <Item value="Id" priority="31" />
+      <Item value="id" priority="128" />
+      <Item value="#if" priority="31" />
+      <Item value="#else" priority="31" />
+      <Item value="configuration" priority="225" />
+      <Item value="HttpConfiguration" priority="58" />
+      <Item value="EnableTestClient" priority="31" />
+      <Item value="true" priority="64" />
+      <Item value="Configuration" priority="31" />
+      <Item value="donaldEpisode" priority="288" />
+      <Item value="Method" priority="26" />
+      <Item value="episodes" priority="191" />
+      <Item value="var" priority="319" />
+      <Item value="maxId" priority="31" />
+      <Item value="newId" priority="31" />
+      <Item value="y" priority="63" />
+      <Item value="HttpConfiguration`0" priority="63" />
+      <Item value="class" priority="30" />
+      <Item value="override" priority="63" />
+      <Item value="base" priority="31" />
+      <Item value="ctor" priority="63" />
+      <Item value="SupportedMediaTypes" priority="31" />
+      <Item value="MediaTypeHeaderValue" priority="28" />
+      <Item value="null" priority="31" />
+      <Item value="HttpServiceHost`0" priority="31" />
+      <Item value="DonaldApi`0" priority="31" />
+      <Item value="this" priority="31" />
+      <Item value="WebApiConfiguration`0" priority="31" />
+      <Item value="value" priority="31" />
+      <Item value="as" priority="31" />
+      <Item value="HttpServerUtility`0" priority="122" />
+      <Item value="path" priority="31" />
+      <Item value="HttpServerUtility" priority="29" />
+      <Item value="HttpServerUtilityBase`0" priority="31" />
+      <Item value="HttpContext`0" priority="31" />
+      <Item value="stream" priority="63" />
+      <Item value="using" priority="31" />
+      <Item value="FileStream`0" priority="31" />
+      <Item value="FileMode`0" priority="31" />
+      <Item value="file" priority="31" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.Routing.RouteCollection">
+      <Item value="Add`0" priority="27" />
+      <Item value="MapServiceRoute`1" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="Now" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTime">
+      <Item value="AddDays`0" priority="54" />
+      <Item value="Date" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Select`2" priority="26" />
+      <Item value="Add`0" priority="53" />
+      <Item value="Remove`0" priority="26" />
+      <Item value="RemoveAll`0" priority="26" />
+      <Item value="SingleOrDefault`1" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DonaldWCFwebApi.Resources.DonaldEpisode">
+      <Item value="Id" priority="134" />
+      <Item value="ArtWorkUrl" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="Max`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.ObjectModel.Collection`1">
+      <Item value="Add`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.ApplicationServer.Http.HttpConfiguration">
+      <Item value="EnableTestClient" priority="26" />
+      <Item value="Formatters" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Http.Formatting.MediaTypeFormatterCollection">
+      <Item value="Add`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.HttpContext">
+      <Item value="Current" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.HttpContext">
+      <Item value="Server" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Web.HttpServerUtility">
+      <Item value="MapPath`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.FileMode">
+      <Item value="Open" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.FileStream">
+      <Item value="CopyTo`0" priority="26" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.5.10\bin\net-2.0\lib</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>

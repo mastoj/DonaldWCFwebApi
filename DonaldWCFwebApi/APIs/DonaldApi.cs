@@ -16,25 +16,25 @@ namespace DonaldWCFwebApi.APIs
                                                              CreateEpisode(1, 
                                                                             "Donald goes to heaven",
                                                                            "Donald goes to heaven and everyone is happy!", 
-                                                                           "Content/images/heaven.jpg",
+                                                                           "~/Content/images/heaven.jpg",
                                                                            "Walt Disney",
                                                                            DateTime.Now.AddDays(-2).Date),
                                                              CreateEpisode(2,
                                                                            "Donald goes to hell",
                                                                            "Donald goes to hell and everyone is sad :(", 
-                                                                           "Content/images/hell.jpg",
+                                                                           "~/Content/images/hell.jpg",
                                                                            "Tomas Jansson",
                                                                            DateTime.Now.AddDays(-1).Date),
                                                              CreateEpisode(3, 
                                                                            "Donald is in the forest",
                                                                            "Donald smells the trees in the forrest.", 
-                                                                           "Content/images/forrest.jpg",
+                                                                           "~/Content/images/forrest.jpg",
                                                                            "Chuck Norris",
                                                                            DateTime.Now.Date),
                                                              CreateEpisode(4,
                                                                            "Donald have a sit down with Obama and Osama",
                                                                            "Donald fix world peace and everyone is happy.", 
-                                                                           "Content/images/peace.jpg",
+                                                                           "~/Content/images/peace.jpg",
                                                                            "Clint Eastwood",
                                                                            DateTime.Now.AddDays(1).Date)
 
@@ -57,6 +57,12 @@ namespace DonaldWCFwebApi.APIs
         public IEnumerable<DonaldEpisode> Get()
         {
             return episodes;
+        }
+
+        [WebGet(UriTemplate = "{id}")]
+        public DonaldEpisode GetId(int id)
+        {
+            return episodes.SingleOrDefault(y => y.Id == id);
         }
 
         [WebInvoke(UriTemplate = "", Method = "POST")]
