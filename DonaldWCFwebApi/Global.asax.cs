@@ -1,6 +1,9 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Net.Http.Headers;
+using System.Web.Mvc;
 using System.Web.Routing;
 using DonaldWCFwebApi.APIs;
+using DonaldWCFwebApi.MessageHandlers;
 using DonaldWCFwebApi.Processors;
 using Microsoft.ApplicationServer.Http;
 
@@ -11,6 +14,8 @@ namespace DonaldWCFwebApi
 
     public class MvcApplication : System.Web.HttpApplication
     {
+        public static IList<UriExtensionMapping> UriExtensionMappings { get; set; }
+
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
@@ -22,6 +27,7 @@ namespace DonaldWCFwebApi
 
             HttpConfiguration configuration = new WebApiConfiguration();// {EnableTestClient = true};
             configuration.Formatters.Add(new JpgProcessor());
+            configuration.MessageHandlers.Add(typeof(UriFormatHandler));
 #if DEBUG
             configuration.EnableTestClient = true;
 #endif

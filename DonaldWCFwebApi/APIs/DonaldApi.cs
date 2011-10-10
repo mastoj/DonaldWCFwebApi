@@ -54,9 +54,9 @@ namespace DonaldWCFwebApi.APIs
         }
 
         [WebGet(UriTemplate = "")]
-        public IEnumerable<DonaldEpisode> Get()
+        public IQueryable<DonaldEpisode> Get()
         {
-            return episodes;
+            return episodes.AsQueryable();
         }
 
         [WebGet(UriTemplate = "{id}")]
