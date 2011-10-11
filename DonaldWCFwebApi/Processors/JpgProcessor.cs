@@ -22,7 +22,9 @@ namespace DonaldWCFwebApi.Processors
         protected override void OnWriteToStream(Type type, object value, Stream stream, HttpContentHeaders contentHeaders, TransportContext context)
         {
             var donaldEpisode = value as DonaldEpisode;
-            var path = HttpContext.Current.Server.MapPath(donaldEpisode.ArtWorkUrl);
+            var path = HttpContext.Current.Server.MapPath("~/Content/images/" + donaldEpisode.CoverArt);
+            //contentHeaders.ContentDisposition = new ContentDispositionHeaderValue("inline") {FileName = donaldEpisode.CoverArt};
+
             using (var file = new FileStream(path, FileMode.Open))
             {
                 file.CopyTo(stream);
