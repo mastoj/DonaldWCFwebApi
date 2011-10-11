@@ -6,9 +6,6 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table>
     <tr>
         <th>
@@ -38,8 +35,8 @@
             @Html.DisplayFor(modelItem => item.Content)
         </td>
         <td>
-            <img src="http://donald:51801/api/donald/@item.Id/jpg" title="@item.Title"/>
-            <a href="http://donald:51801/api/donald/@item.Id/jpg">Cover art</a>
+            <img src="@(ViewBag.ApiUri + item.Id)/jpg" title="@item.Title"/>
+            <a href="@(ViewBag.ApiUri + item.Id)/jpg">Cover art</a>
 @*            @Html.DisplayFor(modelItem => item.CoverArt)
 *@        </td>
         <td>
