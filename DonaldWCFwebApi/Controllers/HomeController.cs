@@ -11,7 +11,7 @@ namespace DonaldWCFwebApi.Controllers
 {
     public class HomeController : Controller
     {
-        private string uri = "http://donald:51801/api/donald/";
+        private static string uri = Configuration.ApiUri;
         //
         // GET: /Home/
 
