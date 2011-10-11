@@ -25,7 +25,7 @@ namespace DonaldWCFwebApi.Processors
             var path = HttpContext.Current.Server.MapPath("~/Content/images/" + donaldEpisode.CoverArt);
             //contentHeaders.ContentDisposition = new ContentDispositionHeaderValue("inline") {FileName = donaldEpisode.CoverArt};
 
-            using (var file = new FileStream(path, FileMode.Open))
+            using (var file = new FileStream(path, FileMode.Open, FileAccess.Read))
             {
                 file.CopyTo(stream);
             }

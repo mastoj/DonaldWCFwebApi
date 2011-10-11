@@ -1,0 +1,41 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <IncludeCustomACLs>TRUE</IncludeCustomACLs>
+
+    <AfterAddIisSettingAndFileContentsToSourceManifest Condition="'$(AfterAddIisSettingAndFileContentsToSourceManifest)'==''">
+      $(AfterAddIisSettingAndFileContentsToSourceManifest);
+      SetCustomACLs;
+    </AfterAddIisSettingAndFileContentsToSourceManifest>
+  </PropertyGroup>
+<!--
+  <ItemGroup>
+    <CustomDirAcl Include="SubDir">
+      <AclAccess>Modify</AclAccess>
+      <Identity>Content\images\</Identity>
+    </CustomDirAcl>
+  </ItemGroup>-->
+
+  <Target Name="SetCustomACLs" Condition="'$(IncludeCustomACLs)'=='TRUE'">
+    <Message Text="Adding Custom ACls" />
+    <ItemGroup>
+      <!--<MsDeploySourceManifest Include="setAcl"
+                               Condition="$(IncludeSetAclProviderOnDestination)">
+        <Path>$(_MSDeployDirPath_FullPath)\Content\images\</Path>
+        <setAclAccess>Read,Write,Modify</setAclAccess>
+        <setAclResourceType>Directory</setAclResourceType>
+        <setAclUser>anonymousAuthenticationUser</setAclUser>
+        <AdditionalProviderSettings>setAclResourceType;setAclAccess;setAclUser</AdditionalProviderSettings>
+      </MsDeploySourceManifest>-->
+      <!--<MsDeploySourceManifest Include="setAcl"
+                              Condition="$(IncludeSetAclProviderOnDestination)">
+        <Path>$(_MSDeployDirPath_FullPath)\%(CustomDirAcl.Identity)</Path>
+        <setAclAccess Condition="%(CustomDirAcl.AclAccess) != ''">%(CustomDirAcl.AclAccess)</setAclAccess>
+        <setAclAccess Condition="%(CustomDirAcl.AclAccess) == ''">FullControl</setAclAccess>
+        <setAclResourceType>Directory</setAclResourceType>
+        <AdditionalProviderSettings>setAclAccess;setAclResourceType</AdditionalProviderSettings>
+      </MsDeploySourceManifest>
+-->
+    </ItemGroup>
+  </Target>
+</Project>

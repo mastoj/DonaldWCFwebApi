@@ -48,6 +48,7 @@ namespace DonaldWCFwebApi.APIs
                            Title = title,
                            Content = content,
                            CoverArt = artWorkUrl,
+                           CoverServerPath = HttpContext.Current.Server.MapPath("~/Content/images/" + artWorkUrl),
                            Author = author,
                            ReleaseDate = releaseDate
                        };
