@@ -12,7 +12,7 @@ namespace DonaldWCFwebApi.Processors
     {
         public JpgProcessor()
         {
-            SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/jpg"));
+            SupportedMediaTypes.Add(new MediaTypeHeaderValue("image/jpg"));
         }
         protected override object OnReadFromStream(Type type, Stream stream, HttpContentHeaders contentHeaders)
         {

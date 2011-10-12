@@ -43,7 +43,7 @@ namespace DonaldWCFwebApi.MessageHandlers
             Add(new UriExtensionMapping
                     {Extension = "json", MediaType = new MediaTypeWithQualityHeaderValue("application/json")});
             Add(new UriExtensionMapping
-                    {Extension = "jpg", MediaType = new MediaTypeWithQualityHeaderValue("application/jpg")});
+                    {Extension = "jpg", MediaType = new MediaTypeWithQualityHeaderValue("image/jpg")});
             Add(new UriExtensionMapping
                     {Extension = "odata", MediaType = new MediaTypeWithQualityHeaderValue("application/atom+xml")});
 
