@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Demo";
+}
+
+<h2>Search me with OData</h2>
+<div>
+<input type="text" id="query"/>
+<input type="button" id="doQuery" value="Filter list"/>
+</div>
+<div id="episodes"></div>
+<div id="imageContainer">
+</div>
+
+<script src="../../Scripts/jquery-1.6.4.js" type="text/javascript"></script>
+<script src="../../Scripts/jQuery.tmpl.js" type="text/javascript"></script>
+<script id="episodeTemplate" type="text/x-jquery-tmpl"> 
+    <div class="episode">
+        <span class="field-label">Title:</span><span class="field-value">${Title}</span><br />
+        <span class="field-label">Author:</span><span class="field-value">${Author}</span><br />
+        <span class="field-label">Content:</span><span class="field-value">${Content}</span><br />
+        <span class="field-label">Release date:</span><span class="field-value">${ReleaseDateFormatted}</span><br />
+        <a href="@ViewBag.ApiUri/${Id}/jpg" class="imageLink">Cover art</a>
+    </div>
+</script>
+<script type="text/javascript">
+    $(function () {
+        var serviceUrl = "@ViewBag.ApiUri";
+        var episodeContainer = $("#episodes");
+        var imageContainer = $("#imageContainer");
+        var filterBox = $("#query")[0];
+
+        $('.imageLink').live('click', function (e) {
+            e.preventDefault();
+            var image = new Image();
+            image.className = "image"
+            var link = $("<a href=" + this.href + "></a>");
+            $(image).load(function () {
+                imageContainer.fadeOut(function () {
+                    imageContainer.empty();
+                    link.append(image);
+                    imageContainer.append(link);
+                    imageContainer.fadeIn();
+                });
+            });
+            image.src = this.href;
+        });
+
+        $.getJSON(serviceUrl, function (data) {
+            displayEpisodes(data);
+        });
+
+        $("#doQuery").click(function(e) {
+            var query = filterBox.value;
+            var url = serviceUrl + "?$filter=" + query;
+            displayEpisodes(url);
+        });
+
+        function displayEpisodes(url) {
+            $.getJSON(encodeURI(url), function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    var episode = data[i];
+                    episode.ReleaseDateFormatted = Date(episode.ReleaseDate);
+                }
+                var newList = $("#episodeTemplate").tmpl(data);
+                episodeContainer.slideUp();
+                episodeContainer.empty();
+                newList.appendTo("#episodes");
+                episodeContainer.slideDown();
+            });
+        }
+        displayEpisodes(serviceUrl);
+    });
+</script>
+
+@*
+  {
+    "Author":"Tomas Jansson",
+    "Content":"Donald goes to hell and everyone is sad :(",
+    "CoverArt":"hell.jpg",
+    "Id":2,
+    "ReleaseDate":"\/Date(1318370400000+0200)\/",
+    "Title":"Donald goes to hell"
+  },*@

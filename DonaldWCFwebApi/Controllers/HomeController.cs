@@ -23,9 +23,13 @@ namespace DonaldWCFwebApi.Controllers
             var response = client.Get(uri);
 
             var donaldEpisodes = response.Content.ReadAs<List<DonaldEpisode>>();
-            ViewBag.ApiUri = uri;
             return View(donaldEpisodes);
         }
 
+        public ActionResult Demo()
+        {
+            ViewBag.ApiUri = Configuration.ApiUri;
+            return View();
+        }
     }
 }

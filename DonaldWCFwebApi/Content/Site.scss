@@ -1,0 +1,24 @@
+﻿body {
+	#episodes
+	{
+		display: inline-block;
+		.episode
+		{
+			width: 400px;
+			.field-value
+			{
+				float: right;
+			}
+		}
+	}
+	#imageContainer
+	{
+		display: block;
+		width: 500px;
+		float: right;
+		.image
+		{
+			width: 100%;
+		}
+	}
+}
