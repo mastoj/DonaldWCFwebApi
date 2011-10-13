@@ -13,6 +13,5 @@ namespace DonaldWCFwebApi.Resources
         public string CoverArt { get; set; }
         public string Author { get; set; }
         public DateTime? ReleaseDate { get; set; }
-        public string CoverServerPath { get; set; }
     }
 }

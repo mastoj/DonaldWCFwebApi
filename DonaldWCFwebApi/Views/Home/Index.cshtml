@@ -15,7 +15,7 @@
             Content
         </th>
         <th>
-            Cover art
+            Cover
         </th>
         <th>
             Author
@@ -35,10 +35,8 @@
             @Html.DisplayFor(modelItem => item.Content)
         </td>
         <td>
-            <img src="@Url.Content("~/api/donald/" + item.Id + "/jpg")" title="@item.Title"/>
             <a href="@Url.Content("~/api/donald/" + item.Id + "/jpg")">Cover art</a>
-@*            @Html.DisplayFor(modelItem => item.CoverArt)
-*@        </td>
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Author)
         </td>
