@@ -26,7 +26,7 @@ namespace DonaldWCFwebApi
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             HttpConfiguration configuration = new WebApiConfiguration();// {EnableTestClient = true};
-            configuration.Formatters.Add(new JpgProcessor());
+            configuration.Formatters.Add(new JpgFormatter());
             configuration.MessageHandlers.Add(typeof(UriFormatHandler));
 #if DEBUG
             configuration.EnableTestClient = true;
