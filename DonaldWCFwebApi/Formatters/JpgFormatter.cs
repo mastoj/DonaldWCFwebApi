@@ -8,9 +8,9 @@ using DonaldWCFwebApi.Resources;
 
 namespace DonaldWCFwebApi.Processors
 {
-    public class JpgProcessor : MediaTypeFormatter
+    public class JpgFormatter : MediaTypeFormatter
     {
-        public JpgProcessor()
+        public JpgFormatter()
         {
             SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/jpg"));
             SupportedMediaTypes.Add(new MediaTypeHeaderValue("image/jpg"));
