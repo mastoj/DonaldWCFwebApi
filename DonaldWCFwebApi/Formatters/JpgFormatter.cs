@@ -24,10 +24,10 @@ namespace DonaldWCFwebApi.Processors
         {
             var donaldEpisode = value as DonaldEpisode;
             var path = HttpContext.Current.Server.MapPath("~/Content/images/" + donaldEpisode.CoverArt);
-            HttpContext.Current.Response.AppendHeader("content-disposition",
-                                                      "attachment;filename=" + donaldEpisode.CoverArt);
+            //HttpContext.Current.Response.AppendHeader("content-disposition",
+            //                                          "attachment;filename=" + donaldEpisode.CoverArt);
             // below does not work
-            //contentHeaders.ContentDisposition = new ContentDispositionHeaderValue("attachment") {FileName = donaldEpisode.CoverArt};
+            contentHeaders.ContentDisposition = new ContentDispositionHeaderValue("attachment") {FileName = donaldEpisode.CoverArt};
 
             using (var file = new FileStream(path, FileMode.Open, FileAccess.Read))
             {

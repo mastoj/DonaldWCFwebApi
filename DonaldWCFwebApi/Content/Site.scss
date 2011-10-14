@@ -1,24 +1,33 @@
 ﻿body {
-	#episodes
+	#content
 	{
-		display: inline-block;
-		.episode
+		min-height: 800px;
+		#episodes
 		{
-			width: 400px;
-			.field-value
+			display: inline-block;
+			vertical-align: top;
+			.episode
 			{
-				float: right;
+				width: 400px;
+				.field-value
+				{
+					float: right;
+				}
 			}
 		}
-	}
-	#imageContainer
-	{
-		display: block;
-		width: 500px;
-		float: right;
-		.image
+		#imageContainer
 		{
-			width: 100%;
+			display: inline-block;
+			width: 500px;
+			#imageInnerContainer
+			{
+				padding: 30px;
+				width: 100%;
+				.image
+				{
+					width: 100%;
+				}
+			}
 		}
 	}
 }
