@@ -35,7 +35,7 @@
         $('.imageLink').live('click', function (e) {
             e.preventDefault();
             var image = new Image();
-            image.className = "image"
+            image.className = "image";
             var link = $("<a href=" + this.href + "></a>");
             $(image).load(function () {
                 link.append(image);
