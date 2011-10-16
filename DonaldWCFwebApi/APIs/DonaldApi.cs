@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Web;
@@ -60,9 +62,12 @@ namespace DonaldWCFwebApi.APIs
         }
 
         [WebGet(UriTemplate = "{id}")]
-        public DonaldEpisode GetId(int id)
+        public HttpResponseMessage<DonaldEpisode> GetId(int id)
         {
-            return episodes.SingleOrDefault(y => y.Id == id);
+            var value = episodes.SingleOrDefault(y => y.Id == id);
+            var response = HRMessage.Create(value);
+//            response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment") { FileName = value.CoverArt };
+            return response;
         }
 
         [WebInvoke(UriTemplate = "", Method = "POST")]
@@ -88,6 +93,15 @@ namespace DonaldWCFwebApi.APIs
         public void Delete(int id)
         {
             episodes.RemoveAll(y => y.Id == id);
+        }
+    }
+
+    public static class HRMessage
+    {
+        public static HttpResponseMessage<T> Create<T>(T value)
+        {
+            var response = new HttpResponseMessage<T>(value);
+            return response;
         }
     }
 }

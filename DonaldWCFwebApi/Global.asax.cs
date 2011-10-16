@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Net.Http.Headers;
 using System.Web.Mvc;
 using System.Web.Routing;
 using DonaldWCFwebApi.APIs;
+using DonaldWCFwebApi.Formatters;
 using DonaldWCFwebApi.MessageHandlers;
 using DonaldWCFwebApi.Processors;
 using Microsoft.ApplicationServer.Http;
@@ -27,6 +27,7 @@ namespace DonaldWCFwebApi
 
             HttpConfiguration configuration = new WebApiConfiguration();// {EnableTestClient = true};
             configuration.Formatters.Add(new JpgFormatter());
+            configuration.Formatters.Add(new RssFormatter());
             configuration.MessageHandlers.Add(typeof(UriFormatHandler));
 #if DEBUG
             configuration.EnableTestClient = true;
